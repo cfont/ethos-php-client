@@ -10,7 +10,7 @@ $authurlpath='/auth';
 $apiurlpath='/api/';
 $ethosDataModel="persons";
 $credentialID="some-banner-id-here";
-$credentialType="Banner%20ID";
+$credentialType="bannerId";
 //TODO: provide options and documentation for credentialType
 //$publishurl='https://integrateapi.elluciancloud.com/publish';
 //$checkurl='https://integrateapi.elluciancloud.com/consume';
@@ -55,7 +55,7 @@ $proxyGetContext = stream_context_create($proxyGetOpts);
 // Lets use the authtoken to get some data
 
 try {
-  $getData = file_get_contents($ethosurl.$apiurlpath.$ethosDataModel."?credentialId=".$credentialID."&credentialType=".$credentialType, false, $proxyGetContext);
+  $getData = file_get_contents($ethosurl.$apiurlpath.$ethosDataModel."?credential.value=".$credentialID."&credential.type=".$credentialType, false, $proxyGetContext);
   if ($getData === false){
     echo "\r\nWe must have done something wrong because our attempt returned false\r\n";
   } else {

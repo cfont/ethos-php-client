@@ -8,7 +8,7 @@ $ethosurl='https://integrateapi.elluciancloud.com';
 $authurlpath='/auth';
 $apiurlpath='/api/';
 $ethosDataModel="persons";
-$ethosRoleName="faculty";
+$ethosRoleName="instructor";
 //TODO add reference for role names available
 $ethosMaxReturn="3";
 //$publishurl='https://integrateapi.elluciancloud.com/publish';
