@@ -55,7 +55,8 @@ $proxyGetContext = stream_context_create($proxyGetOpts);
 // Lets use the authtoken to get some data
 
 try {
-  $getData = file_get_contents($ethosurl.$apiurlpath.$ethosDataModel."?credential.value=".$credentialID."&credential.type=".$credentialType, false, $proxyGetContext);
+  $personSearchCriteria = array("credential" => array("type" => "$credentialType", "value" => "$credentialID"));
+  $getData = file_get_contents($ethosurl.$apiurlpath.$ethosDataModel."?criteria=".json_encode($personSearchCriteria), false, $proxyGetContext);
   if ($getData === false){
     echo "\r\nWe must have done something wrong because our attempt returned false\r\n";
   } else {
