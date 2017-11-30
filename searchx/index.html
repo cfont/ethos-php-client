@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Using Ethos Better</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+<div class="container">
+  <div class="page-header">
+    <h1>Ellucian Ethos Examples <small>Searching Ethos via PHP</small></h1>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">These are example scripts to search Ethos</h3>
+    </div>
+    <div class="panel-body">
+      In an effort to help demonstrate plugging in some application to Ellucian Ethos and use the Proxy API to request information from the authoritative application for the Persons Data Model. In my case this is connecting to Banner through Ethos Integration. These scripts are meant to be slightly more complex and more interesting than <a href="../kiss/">the KISS examples</a> I've previously made available.
+    </div>
+    <div class="panel-footer">
+      <!-- <a href="#" class="btn btn-danger btn-sm">
+        Agree
+      </a>
+      <a href="#" class="btn btn-default btn-sm">Decline</a> -->
+      These examples will search for persons using the "Get Person(s) by" type of API requests...
+    </div>
+  </div>
+  <div class="row">
+  <div class="col-sm-4 col-sm-offset-1">
+    <div class=" panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Search by Credential</h3>
+      </div>
+      <div class="panel-body">
+        <form action="ethosSearchPersonsByCredential.php">
+          <div class="form-group">
+            <label for="credentialType">Credential Type:</label>
+            <select name="credentialType" id="credentialType" class="form-control">
+                <option value="bannerId">Student ID</option>
+                <option value="bannerUserName">Logon ID</option>
+              </select>
+          </div>
+          <div class="form-group">
+            <label for="credentialValue">Credential Value:</label>
+            <input type="text" class="form-control" id="credentialValue" name="credentialValue" placeholder="S00012345">
+          </div>
+
+          <input class="btn btn-default" type="submit" value="Search"/>
+
+        </form>
+      </div>
+      <div class="panel-footer">
+          Choose either Student ID (which we have historically called the SPRIDEN ID) or choose Logon ID (which we have called the 3rd Party ID and is meant to represent your SSO ID... the account someone may use to log in using AD or LDAP or something like that). Then enter the actual value of that credential so we can search for it using Ethos.
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 col-sm-offset-1">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Search by Role</h3>
+      </div>
+      <div class="panel-body">
+        <form action="ethosSearchPersonsByRole.php">
+          <div class="form-group">
+            <label for="roleName">Role Name:</label>
+            <select name="roleName" id="roleName" class="form-control">
+                <option value="instructor">Instructor</option>
+                <option value="student">Student</option>
+                <option value="employee">Employee</option>
+                <option value="vendor">Vendor</option>
+                <option value="alumni">Alumni</option>
+                <option value="prospectiveStudent">Prospective Student</option>
+                <option value="advisor">Advisor</option>
+              </select>
+          </div>
+          <div class="form-group">
+            <label for="maxReturn">Maximum number to return:</label>
+            <input type="text" class="form-control" id="maxReturn" name="maxReturn" placeholder="5">
+          </div>
+
+          <input class="btn btn-default" type="submit" value="Search"/>
+
+        </form>
+      </div>
+      <div class="panel-footer">
+          Choose one of the roles to search for people that have that role. Then enter the number of results you want to list from that role keeping in mind the smaller the number the faster the search.
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>
