@@ -24,11 +24,3 @@ One day I might should include some background information here about the Elluci
   * `ethosProxyGetPersonsByRole.php` doesn't really need anything else other than the `$apikey` but you can, of course, change the `$ethosRoleName` variable to something else like "Student". You can also change the `$ethosMaxReturn` variable to have more (or less) than 3 person records returned.
 
 Again, **please be forewarned that these are workable examples not meant to be error proof or professionally reviewed.** I know there is a lot of refactoring that could happen to make it safer and better and more efficient and maybe one day I'll get there. But, this is a voluntary project I'm attempting and do not have a lot of time cycles to devote to making this any more awesome.
-
-TODO List:
-
-- [ ] Release this project using KISS branch and tag it 1.0.0
-- [ ] Update project to use a config file so it seems a little more professional
-- [ ] Update project to use search forms and provide a little more dynamo
-- [ ] Update project to have a nice looking web site with menu and search forms and pretty layout of the results
-
